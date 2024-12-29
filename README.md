@@ -1,4 +1,4 @@
-![GitHub Logo v4](https://github.com/user-attachments/assets/4ea29102-f397-4273-8dd6-fa32c9eb4cbc)
+![GitHub Logo v5](https://github.com/user-attachments/assets/01889e24-f24e-41e3-a858-2b896441d7d1)
 # OpenHFT
 OpenHFT was founded with the mission of democratizing computational finance for all market participants. This repository houses a python application that enables retail traders to deploy quantitative trading strategies for indian markets.
 
