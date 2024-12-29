@@ -4,7 +4,6 @@ arrow
 scipy
 numpy
 matplotlib
-itertools
 warnings
 statsmodels
 xgboost
