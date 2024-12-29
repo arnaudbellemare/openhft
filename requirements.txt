@@ -1,0 +1,11 @@
+plotly
+pandas
+arrow
+scipy
+numpy
+matplotlib
+itertools
+warnings
+statsmodels
+xgboost
+scikit-learn
