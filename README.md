@@ -20,4 +20,5 @@ Each strategy has been implemented under an API framework to ensure the strategy
 ### ML Forecasts
 Our team at OpenHFT has also trained a machine learning model based on the XGBoost Classifier on historical nifty 50 stocks for indian markets. The classifier has an objective function of maximizing intra-day profits (Buy at Open & Sell at Close) and by passing the features for Nth day, the machine learning model is able to generate a buy/sell signal for retail participants to act upon. The feature dependence plots & confusion matrix can be accessed via the application frontend. The training dataset and the feature generation scripts are housed inside the ml_model folder inside the quanthft package.
 
-
+### Special Thanks
+A lot of passion and love went into the creation of this application, and we would like to say special thank you to Moulik Adak for his contribution and guidance towards driving the technical architecture for this program and his significant help in building some of these frameworks and strategies in python
