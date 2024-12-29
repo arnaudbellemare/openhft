@@ -15,4 +15,9 @@ The package covers the following strategies
 4. Trend Following Strategy
 5. Pairs Trading Strategy
 
+Each strategy has been implemented under an API framework to ensure the strategy can be leveraged independently for backtesting. Retail participants can directly visit our application over internet and look at the recommendations basis each strategy for the indian market. For developers all the quant strategies are captured in individual python files inside the api folder for the quanthft package. Backtest frameworks have also been implemented for each of the quantitaive strategies basis an Open Buy - Close Sell algorithm for trading.
+
+### ML Forecasts
+Our team at OpenHFT has also trained a machine learning model based on the XGBoost Classifier on historical nifty 50 stocks for indian markets. The classifier has an objective function of maximizing intra-day profits (Buy at Open & Sell at Close) and by passing the features for Nth day, the machine learning model is able to generate a buy/sell signal for retail participants to act upon. The feature dependence plots & confusion matrix can be accessed via the application frontend. The training dataset and the feature generation scripts are housed inside the ml_model folder inside the quanthft package.
+
 
