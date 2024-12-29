@@ -3,11 +3,11 @@ OpenHFT was founded with the mission of democratizing computational finance for 
 
 ### Overview
 Up till now, sophisticated quantitative strategies have been limited to proprietary trading firms who typically deploy their own army of in-house data engineers and quantitative traders who then deploy this models for US and other markets. At OpenHFT, our aim is to bring these frontier models to retail participants who can then leverage the same for Indian markets. Our python application houses three sections: 
-*Quant Models 
-*Backtests 
-*ML Forecasts
++ Quant Models 
++ Backtests 
++ ML Forecasts
 
-###Model Overview
+### Model Overview
 The package covers the following strategies
 1. Momentum Strategy
 2. Stochastic Oscillator Strategy
