@@ -14,6 +14,7 @@ from api.data_snapshot_date_api import *
 from ml_model.ml_forecast_predict import *
 from ml_model.ml_forecast_metrics import *
 from ml_model.ml_forecast_charts_roc import *
+from ml_model.ml_forecast_current_data import *
 
 
 #--------------------------------------------------------------------
@@ -40,6 +41,7 @@ st.sidebar.page_link("open_hft_frontend.py", label="Quant Strategies", icon="�
 #st.sidebar.page_link("streamlit_app.py", label="Quant Strategies", icon="🏠")
 st.sidebar.page_link("pages/intraday_forecasts.py", label="Intraday ML Forecasts", icon="⛅")
 st.sidebar.page_link("pages/backtests.py", label="Backtesting Module", icon="📠")
+st.sidebar.page_link("pages/data_refresh.py", label="Refresh Dataset", icon="🛢️")
 st.sidebar.write('🍵 Data Last Refreshed On ' + str(data_snapshot_date()))
 st.sidebar.write('--------------')
 
@@ -52,6 +54,7 @@ st.header('Using XGBoost ML model for Stock Prediction',divider='grey')
 
 col1, col2 = st.columns(2)
 with col2:
+	ml_model_refresh_data()
 	df1=ml_model_predict()
 	df1=df1[['ScripName','weighted_vol','weighted_daily_return','stochastic_signal','pred']]
 	df1 = df1.sort_values(by=['pred'], ascending=False)

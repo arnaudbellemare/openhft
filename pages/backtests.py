@@ -41,6 +41,7 @@ st.sidebar.page_link("open_hft_frontend.py", label="Quant Strategies", icon="�
 #st.sidebar.page_link("streamlit_app.py", label="Quant Strategies", icon="🏠")
 st.sidebar.page_link("pages/intraday_forecasts.py", label="Intraday ML Forecasts", icon="⛅")
 st.sidebar.page_link("pages/backtests.py", label="Backtesting Module", icon="📠")
+st.sidebar.page_link("pages/data_refresh.py", label="Refresh Dataset", icon="🛢️")
 st.sidebar.write('🍵 Data Last Refreshed On ' + str(data_snapshot_date()))
 st.sidebar.write('--------------')
 strategy_selectbox_side = st.sidebar.selectbox('Select your Quant Strategy', (strategies))
