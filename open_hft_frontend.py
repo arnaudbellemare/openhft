@@ -27,6 +27,8 @@ from api.volatility_charts_api import *
 from api.trend_following_strategy_api import *
 from api.trend_following_charts_api import *
 from api.pairs_trading_strategy_api import *
+from api.spread_trading_api import *
+from api.spread_trading_consolidated_api import *
 
 
 #--------------------------------------------------------------------
@@ -38,7 +40,7 @@ warnings.filterwarnings('ignore')
 #--------------------------------------------------------------------
 #SECTION 0 - INTERNAL VARIABLE DECLARATION
 #--------------------------------------------------------------------
-strategies=['Momentum Strategy','Stochastic Oscillator Strategy','Volatility Skew Strategy','Trend Following Strategy','Pairs Trading Strategy']
+strategies=['Momentum Strategy','Stochastic Oscillator Strategy','Volatility Skew Strategy','Trend Following Strategy','Pairs Trading Strategy','Spread Trading Strategy']
 
 scrip_name=['ASIANPAINT','EICHERMOT','HEROMOTOCO','TATAMOTORS','APOLLOHOSP','SBIN','M&M',
           'BEL','JSWSTEEL','ICICIBANK','INDUSINDBK','ONGC','BAJAJ-AUTO','BRITANNIA','NESTLEIND',
@@ -59,6 +61,7 @@ st.sidebar.page_link("open_hft_frontend.py", label="Quant Strategies", icon="�
 #st.sidebar.page_link("streamlit_app.py", label="Quant Strategies", icon="🏠")
 st.sidebar.page_link("pages/intraday_forecasts.py", label="Intraday ML Forecasts", icon="⛅")
 st.sidebar.page_link("pages/backtests.py", label="Backtesting Module", icon="📠")
+st.sidebar.page_link("pages/data_refresh.py", label="Refresh Dataset", icon="🛢️")
 st.sidebar.write('🍵 Data Last Refreshed On ' + str(data_snapshot_date()))
 st.sidebar.write('--------------')
 strategy_selectbox_side = st.sidebar.selectbox('Select your Quant Strategy', (strategies))
@@ -332,6 +335,41 @@ elif (strategy_selectbox_side==strategies[4]):
     fig2.update_layout(showlegend=False)
     st.plotly_chart(fig2, use_container_width=True)
 
+
+
+#--------------------------------------------------------------------
+#QUANT STRATEGY 5 - SPREAD TRADING STRATEGY
+#--------------------------------------------------------------------
+
+
+elif (strategy_selectbox_side==strategies[5]):
+  'Below are the stock recommendations for ', strategy_selectbox_side
+  df3=spread_trading_consolidated()
+  st.dataframe(df3,hide_index=True)
+  st.divider()
+  col1, col2 = st.columns(2)
+  with col1:
+    'Select parameters to determine the spreads observed over the selected period'
+    scrip_selectbox_main = st.selectbox('Select your Stock', (scrip_name))
+    start_date=  st.date_input('Select Start Date for Chart', value=valid_date_return()[0])
+    end_date=str(data_snapshot_date())
+    df2=spread_trading(scrip_selectbox_main,str(start_date),end_date)
+    df1=df2
+    st.dataframe(df1,hide_index=True)
+    
+  with col2:
+    #print("Testing")
+    'Below chart represents the spreads observed for the stock over the selected period'
+    #scrip_selectbox_main_1 = st.selectbox('Select your Current Stock', (scrip_name))
+    #start_date_1=  st.date_input('Select Start Date for Chart', value=valid_date_return()[0])
+    #end_date_1=str(data_snapshot_date())
+    #print(end_date)
+    fig = px.bar(
+      df1,
+      x="Datetime",
+      y=["Spread"]
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
 
 
