@@ -15,6 +15,7 @@ The package covers the following strategies
 3. Volatility Skew Strategy
 4. Trend Following Strategy
 5. Pairs Trading Strategy
+6. Spread Trading Strategy
 
 Each strategy has been implemented under an API framework to ensure the strategy can be leveraged independently for backtesting. Retail participants can directly visit our application over internet and look at the recommendations basis each strategy for the indian market. For developers all the quant strategies are captured in individual python files inside the api folder for the quanthft package. Backtest frameworks have also been implemented for each of the quantitaive strategies basis an Open Buy - Close Sell algorithm for trading.
 
