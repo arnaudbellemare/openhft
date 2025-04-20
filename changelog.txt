@@ -7,10 +7,10 @@
 3. Added a new Quant Model for Spread Trading
 
 Affected files
-~backtests.py
-~intraday_forecasts.py
-~data_refresh.py
+~pages/backtests.py
+~pages/intraday_forecasts.py
+~pages/data_refresh.py
 ~open_hft_frontend.py
-~ml_forecast_current_data.py
-~spread_trading_api
-~spread_trading_consolidated_api
+~ml_model/ml_forecast_current_data.py
+~api/spread_trading_api
+~api/spread_trading_consolidated_api
