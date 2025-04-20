@@ -8,3 +8,4 @@ statsmodels
 xgboost
 scikit-learn
 streamlit
+py5paisa
